@@ -1,0 +1,6 @@
+services:
+  barracuda-imu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: barracuda-imu
