@@ -1,5 +1,5 @@
 services:
-  barracuda-IMU-node:
+  barracuda-imu:
     build:
       context: .
       dockerfile: Dockerfile
