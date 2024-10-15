@@ -18,3 +18,12 @@ docker run -it barracuda-imu-node
 ```
 
 ## Do the following IF `docker-compose.yml` DOES EXIST:
+### To Build and Start Container 
+```
+docker compose up -d
+```
+
+### To Stop and Remove All Images and Orphans 
+```
+docker compose down --remove-orphans --rmi all
+```
