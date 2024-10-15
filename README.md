@@ -13,7 +13,8 @@ docker build -t imu-node .
 
 ### Run docker image "imu-node" in interactive mode
 1. Open a terminal shell in the base directory of this repository.
-'''bash
-docker run -it imu-node'''
+```bash
+docker run -it imu-node
+```
 
 ## Do the following IF docker-compose.yml DOES EXIST:
