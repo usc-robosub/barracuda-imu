@@ -5,6 +5,6 @@ source /opt/ros/noetic/setup.bash
 cd barracuda-imu/catkin_ws
 catkin_make
 
-# Start interactive shell session in /opt directory
+# Start interactive shell session in /opt/barracuda-imu directory
 cd ..
 exec /bin/bash
