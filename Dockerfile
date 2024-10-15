@@ -8,7 +8,6 @@ WORKDIR /opt
 
 # Install dependencies for the IMU sensor and update other tools
 RUN apt-get update && apt-get install -y \
-    python3-catkin-tools \
     ros-noetic-imu-tools \
     && rm -rf /var/lib/apt/lists/*
 
