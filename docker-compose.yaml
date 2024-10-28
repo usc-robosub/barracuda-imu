@@ -3,4 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    user: root
     container_name: barracuda-imu
+    tty: true
+    network_mode: host
+    restart: no
