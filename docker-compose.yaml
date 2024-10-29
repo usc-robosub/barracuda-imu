@@ -8,3 +8,6 @@ services:
     tty: true
     network_mode: host
     restart: no
+    privileged: true
+    volumes:
+      - /dev:/dev
