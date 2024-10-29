@@ -11,3 +11,4 @@ services:
     privileged: true
     volumes:
       - /dev:/dev
+      - /run/udev:/run/udev
