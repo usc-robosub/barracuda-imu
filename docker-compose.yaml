@@ -7,6 +7,9 @@ services:
     container_name: barracuda-imu
     tty: true
     network_mode: host
+    environment:
+      - ID_VENDOR=${ID_VENDOR}
+      - ID_PRODUCT=${ID_PRODUCT}
     restart: no
     privileged: true
     volumes:
