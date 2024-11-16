@@ -26,20 +26,17 @@ docker compose down --remove-orphans --rmi all
 udevadm info -a -n /dev/ttyUSB0
 ```
 
-### Writing udev Rules
+### Verify udev Rules correctly written
 ```
-sudo nano /etc/udev/rules.d/99-barracuda-imu.rules
-SUBSYSTEM=="tty", ATTRS{idVendor}=="your_vendor_id", ATTR{idProduct}=="your_product_id", SYMLINK+="barracuda-imu"
+cat /etc/udev/rules.d/99-ngimu.rules
 ```
-
-### Reload udev Rules and Test
+Should output:
 ```
-sudo udevadm control --reload-rules
-sudo udevadm trigger
+SUBSYSTEM=="usb", ATTRS{idVendor}=="your_vendor_id", ATTR{idProduct}=="your_product_id", SYMLINK+="ngimu"
 ```
 
 ### Verify Device is Connected
 ```
-ls -l /dev/barracuda-imu
+ls -l /dev/ngimu
 ```
 
