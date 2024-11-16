@@ -8,9 +8,7 @@ services:
     tty: true
     network_mode: host
     environment:
-      - ID_VENDOR=${ID_VENDOR}
-      - ID_PRODUCT=${ID_PRODUCT}
-    restart: no
+      - VENDOR_ID=${VENDOR_ID}
+      - PRODUCT_ID=${PRODUCT_ID}
+    restart: always
     privileged: true
-    volumes:
-      - /run/udev:/run/udev

@@ -7,7 +7,9 @@ COPY . /opt/barracuda-imu
 WORKDIR /opt
 
 # Install dependencies for the IMU sensor and update other tools
-RUN apt-get update && apt-get install -y udev \
+RUN apt-get update && apt-get install -y \ 
+    udev \
+    usbutils \
     && rm -rf /var/lib/apt/lists/*
 
 # Source the workspace on container start
