@@ -12,6 +12,15 @@ sudo udevadm control --reload-rules
 sudo service udev restart 
 sudo udevadm trigger
 
-# Start interactive shell session in /opt/barracuda-imu directory
-cd ..
-exec /bin/bash
+# Start the launch file (add --wait after other node starts roscore)
+roslaunch barracuda_imu barracuda_imu.launch 
+
+# Following is for debugging purposes
+
+# # Source ros and catkin_ws in bashrc
+# echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+# echo "source /opt/barracuda-imu/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+# # Start interactive shell session in /opt/barracuda-imu directory
+# cd ..
+# exec /bin/bash

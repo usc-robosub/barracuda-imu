@@ -134,6 +134,9 @@ int main(int argc, char **argv) {
     // Get Relevant ROS Params
     bool simulation = false;
 
+    // Retrieve the current namespace
+    // std::string namespace_str = n.getNamespace()
+
     ROS_WARN_COND(!n.getParam("/simulation", simulation), "\'simulation\' wasn't defined as a param!");
 
     imu_pub = n.advertise<sensor_msgs::Imu>("imu", 1);

@@ -1,6 +1,0 @@
-### imu config file ###
-imu_publusher:
-  ros__params:
-    port: /dev/ngimu
-    baudrate: 115200
-    simulation: false
