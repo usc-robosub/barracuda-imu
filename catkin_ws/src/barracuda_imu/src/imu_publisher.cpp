@@ -7,7 +7,7 @@
 #include "NgimuReceive.h"
 #include <thread>
 
-#define PORT "/dev/ttyACM0"
+#define PORT "/dev/ngimu"
 
 ros::Publisher imu_pub;
 

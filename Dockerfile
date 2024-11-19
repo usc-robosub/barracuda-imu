@@ -10,7 +10,6 @@ WORKDIR /opt
 RUN apt-get update && apt-get install -y \ 
     udev \
     usbutils \
-    ros-noetic-imu-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # Source the workspace on container start

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(mantaray_sensors)
+project(barracuda_imu)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -129,9 +129,9 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-  include/mantaray_sensors
-  include/mantaray_sensors/Osc99
-  include/mantaray_sensors/serialib
+  include/barracuda_imu
+  include/barracuda_imu/Osc99
+  include/barracuda_imu/serialib
   ${catkin_INCLUDE_DIRS}
 )
 
