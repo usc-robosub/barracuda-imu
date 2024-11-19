@@ -12,3 +12,8 @@ services:
       - PRODUCT_ID=${PRODUCT_ID}
     restart: always
     privileged: true
+    volumes:
+      - type: bind
+        source: ./
+        target: /opt/barracuda-imu
+    working_dir: /opt

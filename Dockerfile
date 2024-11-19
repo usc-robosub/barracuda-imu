@@ -1,7 +1,7 @@
 # Base image for ROS Noetic on Ubuntu 20.04 Focal
 FROM ros:noetic-ros-base-focal
 
-COPY . /opt/barracuda-imu
+# COPY . /opt/barracuda-imu
 
 # Set working directory
 WORKDIR /opt
