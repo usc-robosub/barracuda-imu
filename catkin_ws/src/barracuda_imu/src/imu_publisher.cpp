@@ -8,8 +8,10 @@
 #include <thread>
 
 #define PORT "/dev/ngimu"
+#define BAUDRATE 115200
 
 ros::Publisher imu_pub;
+ros::NodeHandle n;
 
 float quat[4];
 float gyro[3];
@@ -19,9 +21,15 @@ float baro = 0;
 float earth[3];
 
 void serial_imu_callback() {
+    // Get Relevant ROS Params
+    // const char* port;
+    // int baudrate;
+    // ROS_WARN_COND(!n.getParam("/port", port), "\'port\' wasn't defined as a param!");
+    // ROS_WARN_COND(!n.getParam("/baudrate", baudrate), "\'baudrate\' wasn't defined as a param!");
+
     // Process each received byte
     serialib serial;
-    serial.openDevice(PORT, 115200);
+    serial.openDevice(PORT, BAUDRATE);
     ROS_INFO("Opened PORT for IMU");
     while(true) {
         while (serial.available() > 0) {
@@ -121,7 +129,7 @@ int main(int argc, char **argv) {
     
     ros::init(argc, argv, "imu_publisher");
     
-    ros::NodeHandle n;
+    // ros::NodeHandle n;
     ROS_DEBUG("Inside of IMU_publisher");
 
     // Get Relevant ROS Params
