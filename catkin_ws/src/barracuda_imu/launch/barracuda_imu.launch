@@ -1,0 +1,7 @@
+<launch>
+  <!-- This launch file is for mantaray to move autonomously -->
+  <node pkg="barracuda_imu" type="imu_publisher" name="imu_publisher" ns="barracuda">
+    <rosparam command="load" file="$(find barracuda_imu)/params/imu_params.yaml" />
+  </node>
+
+</launch>
