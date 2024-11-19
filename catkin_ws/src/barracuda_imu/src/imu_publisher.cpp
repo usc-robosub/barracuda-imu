@@ -11,7 +11,6 @@
 #define BAUDRATE 115200
 
 ros::Publisher imu_pub;
-ros::NodeHandle n;
 
 float quat[4];
 float gyro[3];
@@ -129,7 +128,7 @@ int main(int argc, char **argv) {
     
     ros::init(argc, argv, "imu_publisher");
     
-    // ros::NodeHandle n;
+    ros::NodeHandle n;
     ROS_DEBUG("Inside of IMU_publisher");
 
     // Get Relevant ROS Params
