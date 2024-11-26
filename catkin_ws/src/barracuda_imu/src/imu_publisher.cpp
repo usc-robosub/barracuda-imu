@@ -37,7 +37,7 @@ void serial_imu_callback() {
             {
                 char* buff = new char[4];
                 serial.readBytes(buff, 1, 500, 0);
-                ROS_INFO("Received byte" + std::to_string(*buff));
+                ROS_INFO(("Received byte" + std::to_string(*buff)).c_str());
                 NgimuReceiveProcessSerialByte(*buff);
                 delete[] buff;
             }
