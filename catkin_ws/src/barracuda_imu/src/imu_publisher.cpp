@@ -7,8 +7,8 @@
 #include "NgimuReceive.h"
 #include <thread>
 
-// #define PORT "/dev/ngimu"
-#define PORT "/dev/ttyACM0"
+#define PORT "/dev/ngimu"
+// #define PORT "/dev/ttyACM0"
 #define BAUDRATE 115200
 
 ros::Publisher imu_pub;
