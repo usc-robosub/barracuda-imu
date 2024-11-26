@@ -138,7 +138,7 @@ int main(int argc, char **argv) {
     // Retrieve the current namespace
     // std::string namespace_str = n.getNamespace()
 
-    ROS_WARN_COND(!n.getParam("/simulation", simulation), "\'simulation\' wasn't defined as a param!");
+    ROS_WARN_COND(!n.getParam("/barracuda/imu_publisher/simulation", simulation), "\'simulation\' wasn't defined as a param!");
 
     imu_pub = n.advertise<sensor_msgs::Imu>("imu", 1);
 
