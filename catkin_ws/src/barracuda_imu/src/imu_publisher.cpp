@@ -37,7 +37,7 @@ void serial_imu_callback() {
             {
                 char* buff = new char[4];
                 serial.readBytes(buff, 1, 500, 0);
-                printf("Received: %c\n", *buff);
+                
                 NgimuReceiveProcessSerialByte(*buff);
                 delete[] buff;
             }

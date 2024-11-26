@@ -148,6 +148,15 @@ static OscError ProcessAddress(const OscTimeTag * const oscTimeTag, OscMessage *
     if (OscAddressMatch(oscMessage->oscAddressPattern, "/earth")) {
         return ProcessEarthAcceleration(oscTimeTag, oscMessage);
     }
+    if (OscAddressMatch(oscMessage->oscAddressPattern, "/error")) {
+        char errorString[256];
+        OscError oscError;
+        oscError = OscMessageGetArgumentAsString(oscMessage, errorString, sizeof (errorString));
+        snprintf(errorString, sizeof (errorString), "NGIMU error: %s", errorString);
+        if (oscError != OscErrorNone) {
+            return oscError;
+        }
+    }
 
     // OSC address not recognised
     if (receiveErrorCallback != NULL) {
