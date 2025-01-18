@@ -74,17 +74,6 @@ find_package(catkin REQUIRED COMPONENTS
 #   sensor_msgs#   std_msgs
 # )
 
-set(OSC99_SOURCES src/Osc99/OscAddress.c
-src/Osc99/OscBundle.c
-src/Osc99/OscCommon.c
-src/Osc99/OscError.c
-src/Osc99/OscMessage.c
-src/Osc99/OscPacket.c
-src/Osc99/OscSlip.c)
-
-add_library(osc99 SHARED ${OSC99_SOURCES})
-add_library(ngimurecieve SHARED src/NgimuReceive.c)
-add_library(serialib SHARED src/serialib/serialib.cpp)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -116,7 +105,7 @@ add_library(serialib SHARED src/serialib/serialib.cpp)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS 
 #  LIBRARIES mantaray_sensors
 #  CATKIN_DEPENDS roscpp rospy sensor_msgs std_msgs
 #  DEPENDS system_lib
@@ -128,12 +117,7 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include/barracuda_imu
-  include/barracuda_imu/Osc99
-  include/barracuda_imu/serialib
-  ${catkin_INCLUDE_DIRS}
-)
+
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -149,7 +133,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/mantaray_sensors_node.cpp)
-add_executable(imu_publisher src/imu_publisher.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -159,18 +142,11 @@ add_executable(imu_publisher src/imu_publisher.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(imu_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(imu_publisher 
-  ${catkin_LIBRARIES}
-  ngimurecieve
-  osc99
-  serialib
-)
 
 #############
 ## Install ##
