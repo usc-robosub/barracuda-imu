@@ -1,5 +1,9 @@
 # barracuda-imu
 
+# [NGIMU](https://x-io.co.uk/ngimu/) ([manual](https://x-io.co.uk/downloads/NGIMU-User-Manual-v1.6.pdf))
+### [NGIMU C/C++ Example](https://github.com/xioTechnologies/NGIMU-C-Cpp-Example)
+### [Mantaray Hardware Sensors](https://github.com/usc-robosub/mantaray_hardware/tree/master/mantaray_sensors)
+
 ### To Build and Start Container 
 ```
 docker compose up -d
@@ -39,4 +43,3 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="your_vendor_id", ATTR{idProduct}=="your_prod
 ```
 ls -l /dev/ngimu
 ```
-

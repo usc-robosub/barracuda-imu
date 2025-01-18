@@ -1,0 +1,4 @@
+### imu config file ###
+port: /dev/ngimu
+baudrate: 115200
+simulation: false
