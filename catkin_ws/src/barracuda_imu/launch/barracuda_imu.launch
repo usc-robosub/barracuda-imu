@@ -2,6 +2,8 @@
 
 <launch>
 
+    <group ns="barracuda">
+
   #### Nodelet manager ######################################################
 
   <node pkg="nodelet" type="nodelet" name="imu_manager"
@@ -89,5 +91,6 @@
 
     <param name="use_mag" value="true"/>
   </node>
+  </group>
 
 </launch>
