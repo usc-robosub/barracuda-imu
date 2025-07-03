@@ -4,7 +4,7 @@ ROS package for interfacing with Phidgets Spatial IMU on the USC Robosub Barracu
 
 ## Overview
 
-This package uses the [Phidgets Spatial IMU](https://www.phidgets.com/?tier=3&catid=10&pcid=8&prodid=32) to provide orientation, angular velocity, and linear acceleration data via ROS. The system runs in a Docker container for easy deployment and dependency management.
+This package uses the [Phidgets Spatial IMU](https://www.phidgets.com/?prodid=1205) to provide orientation, angular velocity, and linear acceleration data via ROS. The system runs in a Docker container for easy deployment and dependency management.
 
 ### Hardware Requirements
 - Phidgets Spatial IMU (1044 or MOT0110+ models supported)
