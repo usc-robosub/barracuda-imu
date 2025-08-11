@@ -23,7 +23,7 @@
     # optional param hub_port, used if connected to a VINT hub
     <!-- <param name="hub_port" value="0"/> -->
 
-    <param name="frame_id" value="imu_link"/>
+    <param name="frame_id" value="barracuda/imu_link"/>
 
     # optional param use_orientation, default is false
     <!-- <param name="use_orientation" value="false"/> -->
@@ -90,6 +90,8 @@
     output="screen">
 
     <param name="use_mag" value="true"/>
+    <param name="publish_tf" value="false"/>
+    <param name="remove_gravity_vector" value="true"/>
   </node>
   </group>
 

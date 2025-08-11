@@ -1,8 +1,6 @@
 # Base image for ROS Noetic on Ubuntu 20.04 Focal
 FROM ros:noetic-ros-base-focal
 
-COPY . /opt/barracuda-imu
-
 # Set working directory
 WORKDIR /opt
 
@@ -12,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     usbutils \
     ros-noetic-phidgets-spatial \
     && rm -rf /var/lib/apt/lists/*
+
+COPY . /opt/barracuda-imu
 
 # Source the workspace on container start
 CMD ["/bin/bash", "/opt/barracuda-imu/entrypoint.sh"]
