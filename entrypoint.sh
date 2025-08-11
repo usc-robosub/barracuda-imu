@@ -16,11 +16,4 @@ sudo udevadm trigger
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 echo "source /opt/barracuda-imu/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
-# Start the launch file (add --wait after other node starts roscore)
-roslaunch barracuda_imu barracuda_imu.launch 
-
-# Following is for debugging purposes
-
-# # Start interactive shell session in /opt/barracuda-imu directory
-# cd ..
-# exec /bin/bash
+roslaunch barracuda_imu barracuda_imu.launch --wait
